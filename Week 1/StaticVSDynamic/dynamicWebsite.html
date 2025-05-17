@@ -1,0 +1,57 @@
+<!-- dynamic.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic Menu - Joe's Diner</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    .filter { margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Joe's Diner Menu</h1>
+
+  <div class="filter">
+    <label for="category">Filter by category:</label>
+    <select id="category" onchange="filterMenu()">
+      <option value="all">All</option>
+      <option value="food">Food</option>
+      <option value="drink">Drink</option>
+    </select>
+  </div>
+
+  <ul id="menuList"></ul>
+
+  <script>
+    const menu = [
+      { name: "Cheeseburger", price: 5, category: "food", emoji: "🍔" },
+      { name: "Fries", price: 2, category: "food", emoji: "🍟" },
+      { name: "Soda", price: 1, category: "drink", emoji: "🥤" },
+      { name: "Coffee", price: 2, category: "drink", emoji: "☕" }
+    ];
+
+    function displayMenu(items) {
+      const menuList = document.getElementById('menuList');
+      menuList.innerHTML = "";
+      items.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.emoji} ${item.name} - $${item.price}`;
+        menuList.appendChild(li);
+      });
+    }
+
+    function filterMenu() {
+      const selected = document.getElementById('category').value;
+      if (selected === "all") {
+        displayMenu(menu);
+      } else {
+        displayMenu(menu.filter(item => item.category === selected));
+      }
+    }
+
+    // Initialize
+    displayMenu(menu);
+  </script>
+</body>
+</html>
