@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>With Flex - Advanced Concepts</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <style>
+    .flex-container {
+      width: 400px;
+      height: 300px;
+      border: 2px solid blue;
+      resize: both;
+      overflow: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .box {
+      width: 80px;
+      height: 80px;
+      background-color: lightgreen;
+      margin: 10px;
+    }
+    .box-1 {
+      background-color: lightcoral;
+      flex-shrink: 2;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="animate__animated animate__bounce">An animated element</h1>
+  <h2>With Flex</h2>
+  <div class="flex-container" data-resizable="true">
+    <div class="box box-1">1</div>
+    <div class="box box-2">2</div>
+    <div class="box box-3">3</div>
+  </div>
+  </div>
+</body>
+</html>
