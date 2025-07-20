@@ -1,9 +1,11 @@
-import ThemeSwitch from "./ThemeSwitch";
+import ToggleTheme from "./ToggleTheme";
+import { Spin } from 'antd';
 
 const NewPage = () => {    
     return (<div>
         <h3>New Page</h3>
-        <ThemeSwitch/>
+        <Spin />
+        <ToggleTheme />
     </div>)
 }
 
